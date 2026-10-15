@@ -4,13 +4,13 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{color-scheme:dark;--bg:#05080f;--ink:#e8eefc;--mu:#8795b5;--cy:#22d3ee;--bl:#818cf8;--rd:#f43f5e;--am:#fbbf24;--bd:#16213a;--card:#0b1324}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.8 "IBM Plex Sans Arabic",system-ui,sans-serif;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.8 "IBM Plex Sans Arabic",system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
 a{color:inherit;text-decoration:none}
 section{position:relative;padding:110px 24px}
 .w{max-width:1180px;margin:0 auto}
 #pg{position:fixed;top:0;right:0;height:3px;width:0;background:linear-gradient(270deg,var(--cy),var(--bl));z-index:100}
 nav{position:fixed;top:0;inset-inline:0;z-index:90;padding:calc(14px + env(safe-area-inset-top,0px)) 24px 14px;transition:.4s}
-nav.sc{background:#05080fcc;backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+nav.sc{background:#05080fcc;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
 nav .w{display:flex;align-items:center;gap:28px}
 .lg{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px}
 .lg svg{width:34px;height:34px}.lg .pu{transform-origin:center;animation:bl 4s infinite}
@@ -19,7 +19,7 @@ nav ul a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:14px;font-weight:600;font-size:16px;border:1px solid var(--bd);transition:.3s;cursor:pointer;color:var(--ink);background:none}
 .btn.p{background:linear-gradient(135deg,var(--cy),var(--bl));color:#04101a;border:0;box-shadow:0 10px 40px #22d3ee33}
 .btn.p:hover{transform:translateY(-3px);box-shadow:0 16px 54px #22d3ee66}.btn:hover{border-color:var(--cy)}
-.hero{min-height:100svh;display:flex;align-items:center;padding-top:130px;overflow:hidden}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:130px;overflow:hidden}
 .glow{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5;pointer-events:none}
 .g1{width:520px;height:520px;background:#22d3ee33;top:-120px;left:-100px}.g2{width:480px;height:480px;background:#818cf833;bottom:-160px;right:-80px}
 .gridbg{position:absolute;inset:0;background:linear-gradient(#ffffff08 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,#ffffff08 1px,transparent 1px) 0 0/56px 56px;mask-image:radial-gradient(circle at 50% 40%,#000 20%,transparent 75%)}
@@ -71,13 +71,15 @@ footer{border-top:1px solid var(--bd);padding:34px 24px;color:var(--mu);font-siz
 @keyframes sp{to{transform:rotate(360deg)}}@keyframes pg{from{transform:scale(1);opacity:.9}to{transform:scale(3.2);opacity:0}}
 @keyframes pu{50%{opacity:.3}}@keyframes bob{50%{transform:translateY(-7px)}}@keyframes mq{to{transform:translateX(-50%)}}
 @keyframes gr{to{transform:scaleY(.35)}}@keyframes bl{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-@media(max-width:900px){.hg{grid-template-columns:1fr}.cd,.cd.wide,.cd.big{grid-column:span 6}nav ul{display:none}nav .btn{margin-inline-start:auto}section{padding:80px 20px}.lb{font-size:11px}}
+@media(max-width:900px){.hg{grid-template-columns:1fr;gap:56px}.hero{padding-top:112px;padding-bottom:56px;min-height:auto}.cd,.cd.wide,.cd.big{grid-column:span 6}nav ul{display:none}nav .btn{margin-inline-start:auto;padding:10px 18px;font-size:14px}.lg{font-size:20px}section{padding:76px 20px}.lead{font-size:17px;margin:20px 0 28px}.cta .btn{flex:1 1 100%;justify-content:center}.stats{grid-template-columns:repeat(2,1fr);gap:28px 14px}.lb{font-size:10.5px;padding:5px 8px;max-width:54%;white-space:normal}.lb:nth-last-of-type(3){left:auto!important;right:3%;top:5%!important}.lb:nth-last-of-type(2){left:3%!important;top:64%!important}.lb:nth-last-of-type(1){left:auto!important;right:3%;top:82%!important}.cd{padding:22px}.s{padding-right:64px}.s h3{font-size:21px}.fin .box{padding:60px 20px}}
+@media(max-width:380px){h1{font-size:33px}.sp{font-size:23px}.lb b{font-size:10px}}
+@media(hover:none){.cd:hover{transform:none}.cd:hover:before{opacity:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,h1 .wd,.lead,.cta,.radar,.lb{opacity:1!important;transform:none!important;filter:none!important}html{scroll-behavior:auto}}
 </style></head><body>
 <div id="pg"></div>
 <nav id="nv"><div class="w"><a class="lg" href="#top"><svg viewBox="0 0 40 40" fill="none"><path d="M3 20C8 11 14 7 20 7s12 4 17 13c-5 9-11 13-17 13S8 29 3 20Z" stroke="#22d3ee" stroke-width="2"/><circle class="pu" cx="20" cy="20" r="6.5" fill="#22d3ee"/><circle cx="20" cy="20" r="2.5" fill="#05080f"/></svg>رقيب</a>
 <ul><li><a href="#features">المنصة</a></li><li><a href="#how">كيف يعمل</a></li><li><a href="#cta">التجربة</a></li></ul><a class="btn p" href="sentinelops-dashboard.html">العرض التجريبي</a></div></nav>
-
+ 
 <header class="hero" id="top"><i class="gridbg"></i><i class="glow g1" data-p=".18"></i><i class="glow g2" data-p="-.12"></i>
 <div class="w hg"><div><span class="chip"><i></i>نموذج أولي ببيانات محاكاة</span>
 <h1 id="h"><span class="ln">عينٌ ترى كل شيء،</span><span class="ln l2">وعقلٌ يسبق الخطر.</span></h1>
@@ -88,13 +90,13 @@ footer{border-top:1px solid var(--bd);padding:34px 24px;color:var(--mu);font-siz
 <div class="lb" style="--c:#f43f5e;--d:1.6s;left:58%;top:12%"><b>P-10482 · ثقة 94%</b>سلاح محتمل في Hall B</div>
 <div class="lb" style="--c:#fbbf24;--d:2.2s;left:4%;top:68%"><b>P-08321</b>اشتباه سرقة في الجناح 24</div>
 <div class="lb" style="--c:#22d3ee;--d:2.8s;left:52%;top:80%"><b>CAM-17</b>هجوم DDoS قيد الاحتواء</div></div></div></header>
-
+ 
 <div class="mq"><div class="mt"><span>كشف الأسلحة المحتملة</span><span>تتبّع بمعرّفات مجهولة</span><span>أدلة فيديو قبل الحادث وبعده</span><span>حماية الكاميرات سيبرانيًا</span><span>صيانة تنبؤية</span><span>إدارة الحوادث</span><span>كشف الأسلحة المحتملة</span><span>تتبّع بمعرّفات مجهولة</span><span>أدلة فيديو قبل الحادث وبعده</span><span>حماية الكاميرات سيبرانيًا</span><span>صيانة تنبؤية</span><span>إدارة الحوادث</span></div></div>
-
+ 
 <section><div class="w stats"><div class="rv"><b data-n="48">0</b><span>كاميرا ذكية تحت المراقبة</span></div><div class="rv" style="--i:1"><b data-n="8426">0</b><span>زائر يُتتبَّع يوميًا بمعرّف مؤقت</span></div><div class="rv" style="--i:2"><b data-n="3" data-pre="&lt; ">0</b><span>ثوانٍ، زمن التنبيه المستهدف</span></div><div class="rv" style="--i:3"><b data-n="98.7" data-s="%">0</b><span>صحة النظام العامة</span></div></div></section>
-
+ 
 <section><p class="sp" id="sp">المعارض والمؤتمرات الكبرى لا تحتمل لحظة غفلة. عشرات الآلاف من الزوار، ومئات الكاميرات، وتهديدات قد تأتي من الأرض أو من الشبكة. رقيب يجمع كل ذلك في رؤية واحدة، ويحوّل الفوضى إلى قرار.</p></section>
-
+ 
 <section id="features"><div class="w"><h2 class="h2 rv">كل ما يحتاجه مركز العمليات، في مكان واحد</h2><p class="sub rv">من اللحظة التي تلتقط فيها الكاميرا شيئًا مريبًا إلى لحظة إغلاق الحادث، رقيب يرافقك في كل خطوة.</p>
 <div class="bento">
 <div class="cd big rv"><div class="ic">👁</div><h3>تتبّع بلا هوية</h3><p>معرّف مؤقت لكل شخص بدل الاسم أو الوجه. تعرف أين كان وماذا فعل، دون المساس بخصوصية أحد.</p><div class="bars"><i style="--h:40%;--d:0s"></i><i style="--h:70%;--d:.2s"></i><i style="--h:55%;--d:.4s"></i><i style="--h:90%;--d:.6s"></i><i style="--h:65%;--d:.8s"></i><i style="--h:80%;--d:1s"></i><i style="--h:50%;--d:1.2s"></i><i style="--h:75%;--d:1.4s"></i><i style="--h:60%;--d:1.6s"></i><i style="--h:85%;--d:1.8s"></i></div></div>
@@ -103,17 +105,17 @@ footer{border-top:1px solid var(--bd);padding:34px 24px;color:var(--mu);font-siz
 <div class="cd wide rv" style="--i:1"><div class="ic">🛡</div><h3>الكاميرا نفسها محمية</h3><p>هجمات DDoS، محاولات الدخول الفاشلة، والتلاعب بالبرمجيات الثابتة. الأمن السيبراني والأمن الميداني في نظام واحد.</p></div>
 <div class="cd wide rv"><div class="ic">⏱</div><h3>صيانة تنبؤية</h3><p>يتوقع تعطّل الكاميرا قبل وقوعه بدقائق، من ارتفاع فقد الحزم ودرجة الحرارة.</p></div>
 <div class="cd wide rv" style="--i:1"><div class="ic">📊</div><h3>تحليلات تقرأ الصورة الكاملة</h3><p>مؤشرات الحوادث والإيجابيات الكاذبة وسير عمل واضح من الاكتشاف إلى الإغلاق.</p></div></div></div></section>
-
+ 
 <section id="how"><div class="w"><h2 class="h2 rv">من الرصد إلى الاستجابة في أربع خطوات</h2><p class="sub rv">مسار واضح يختصر على المشغّل الوقت ويقلل الخطأ.</p>
 <div class="steps" id="st"><div class="ln0"><i id="ln"></i></div>
 <div class="s"><em>١</em><h3>رصد</h3><p>تغطي الكاميرات كل زوايا المكان، ويمنح رقيب كل شخص معرّفًا مؤقتًا ويتتبّع حركته.</p></div>
 <div class="s"><em>٢</em><h3>تحليل</h3><p>يرصد السلوك المريب والأشياء المحظورة، ويولّد تنبيهًا بدرجة خطورة وثقة.</p></div>
 <div class="s"><em>٣</em><h3>تحقق</h3><p>يراجع المشغّل مقطع الأدلة، ثم يؤكد الحادث أو يصنّفه إيجابيًا كاذبًا.</p></div>
 <div class="s"><em>٤</em><h3>استجابة</h3><p>يتحرك الفريق بخطة واضحة، ويُغلق الحادث بتقرير جاهز للتوثيق.</p></div></div></div></section>
-
+ 
 <section class="fin" id="cta"><div class="w"><div class="box rv"><h2 class="h2">شاهد رقيب وهو يعمل</h2><p class="sub" style="margin-inline:auto">لوحة تحكم حية بتنبيهات وأحداث تتولد أمامك، من تنبيه سلاح محتمل إلى هجوم سيبراني وتنبؤ بعطل.</p><a class="btn p" href="sentinelops-dashboard.html" style="font-size:18px;padding:16px 36px">افتح العرض التجريبي</a></div></div></section>
 <footer>رقيب، مشروع تخرج في الأمن السيبراني. جميع التنبيهات والبيانات في العرض محاكاة ولا يوجد أي تتبع أو مراقبة حقيقية.</footer>
-
+ 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 // headline words
